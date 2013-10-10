@@ -1,0 +1,8 @@
+### /.CLOUD66/DEPLOY_HOOKS.YML ###
+
+development:
+    first_thing:
+      - source: /.cloud66/files/abc.def
+        destination: ~/abc.def
+        target: rails
+
