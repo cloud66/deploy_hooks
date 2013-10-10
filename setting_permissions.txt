@@ -1,0 +1,15 @@
+### /.CLOUD66/DEPLOY_HOOKS.YML ###
+
+production:
+    first_thing:
+      - source: /.cloud66/scripts/permissions.sh
+        destination: /tmp/scripts/permissions.sh
+        target: postgresql
+        apply_during: build_only
+        execute: true
+        sudo: true
+
+### /.CLOUD66/SCRIPTS/PERMISSIONS.SH ###  
+
+#!/bin/bash
+sudo chmod 0644 -R /var/.cloud66_env
