@@ -1,0 +1,25 @@
+### /.CLOUD66/DEPLOY_HOOKS.YML ###
+
+production:
+    first_thing:
+      - source: /.cloud66/scripts/install.sh
+        destination: /tmp/install.sh
+        target: rails
+        apply_during: build_only
+        run_on: all_servers
+        execute: true
+        sudo: true
+        
+### /.CLOUD66/SCRIPTS/INSTALL.SH ###
+
+#!/bin/bash
+FILE=/tmp/install_done
+
+if [ -f $FILE ]
+then
+	echo "File $FILE exists..."
+else
+	  apt-get install libicu-dev -y
+    apt-get install acl -y
+    touch /tmp/install_done
+fi
