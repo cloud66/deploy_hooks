@@ -19,7 +19,7 @@ if [ -f $FILE ]
 then
 	echo "File $FILE exists..."
 else
-	  apt-get install libicu-dev -y
+    apt-get install libicu-dev -y
     apt-get install acl -y
     touch /tmp/install_done
 fi
