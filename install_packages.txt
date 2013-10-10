@@ -17,7 +17,7 @@ FILE=/tmp/install_done
 
 if [ -f $FILE ]
 then
-	echo "File $FILE exists..."
+    echo "File $FILE exists..."
 else
     apt-get install libicu-dev -y
     apt-get install acl -y
